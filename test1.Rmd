@@ -28,7 +28,6 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-
 ```{r echo=FALSE}
 ### ЭТО ДОЛЖНА БЫТЬ САМАЯ ПОСЛЕДНЯЯ ЧАСТЬ В ОТЧЕТЕ 
 # здесь мы автоматически записываем изменения в git
@@ -48,7 +47,7 @@ if(!file.exists(".gitignore")){
 git2r::add(path = "*")
 git_status = git2r::status()
 # проверяем, есть ли что коммитить
-if(length(git_status$staged)>0){
+if(length(git_status)>0){
     #  если есть что коммитить, то коммитим
     version = git2r::commit(message = paste("Autocommit", Sys.time()), all = TRUE)
 } else {
@@ -58,5 +57,3 @@ if(length(git_status$staged)>0){
 version = format(version)
 cat("Версия", version, "\n")
 ```
-
-
