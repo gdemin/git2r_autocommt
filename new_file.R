@@ -1,34 +1,3 @@
----
-title: "test"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(git2r)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-
 ```{r include=FALSE}
 ### ЭТО ДОЛЖНА БЫТЬ САМАЯ ПОСЛЕДНЯЯ ЧАСТЬ В ОТЧЕТЕ 
 # здесь мы автоматически записываем изменения в git
@@ -48,7 +17,7 @@ if(!file.exists(".gitignore")){
 git2r::add(path = "*")
 git_status = git2r::status()
 # проверяем, есть ли что коммитить
-if(length(git_status$staged)>0){
+if(length(git_status)>0){
     #  если есть что коммитить, то коммитим
     version = git2r::commit(message = paste("Autocommit", Sys.time()), all = TRUE)
 } else {
@@ -58,4 +27,4 @@ if(length(git_status$staged)>0){
 version = format(version)
 ```
 
-###### Версия `r version`
+###### Версия `r version` # тут надо добавить буковку r
