@@ -56,7 +56,7 @@ if(length(git_status$staged)>0){
     version = git2r::last_commit()
 }
 version = format(version)
-cat("\n\n\nВерсия", version, "\n")
+cat("Версия", version, "\n")
 ```
 
 
