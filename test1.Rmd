@@ -58,4 +58,4 @@ if(length(git_status$staged)>0){
 version = format(version)
 ```
 
-###### Версия отчета `r version`
+###### Версия `r version`
