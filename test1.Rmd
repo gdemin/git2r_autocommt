@@ -38,16 +38,8 @@ if(!git2r::in_repository()){
 }
 git2r::config(user.name = "datamary", user.email = "datamary@admitad.com")
 if(!file.exists(".gitignore")){
-    writeLines("
-               .Rproj.user
-               .Rhistory
-               .RData
-               .Ruserdata
-               data/
-               secret
-               ",
-               ".gitignore",
-               )
+    writeLines(c(".Rproj.user", ".Rhistory", ".RData", ".Ruserdata", "data/", "secret"),
+               ".gitignore")
 }
 git2r::add(path = "*")
 git_status = git2r::status()
@@ -58,7 +50,5 @@ if(length(git_status$staged)>0){
 }
 version = format(version)
 ```
-
-
 
 ###### Версия отчета `r version`
