@@ -29,7 +29,7 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
-```{r include=FALSE}
+```{r echo=FALSE}
 ### ЭТО ДОЛЖНА БЫТЬ САМАЯ ПОСЛЕДНЯЯ ЧАСТЬ В ОТЧЕТЕ 
 # здесь мы автоматически записываем изменения в git
 # таким способом можно будет отслеживать все модификации расчетов
@@ -56,6 +56,7 @@ if(length(git_status$staged)>0){
     version = git2r::last_commit()
 }
 version = format(version)
+cat("Версия", version, "\n")
 ```
 
-###### Версия `r version`
+
