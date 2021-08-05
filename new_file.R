@@ -5,7 +5,7 @@ if(!git2r::in_repository()){
     git2r::init()
 }
 # задаем пользователя, от которого будем коммитить
-git2r::config(user.name = "user", user.email = "user@email.com")
+git2r::config(user.name = "gdemin", user.email = "gdemin@gmail.com")
 if(!file.exists(".gitignore")){
     # если не существует файла .gitignore, то создаем его
     writeLines(c(".Rproj.user", ".Rhistory", ".RData", ".Ruserdata", "data/", "secret"),
